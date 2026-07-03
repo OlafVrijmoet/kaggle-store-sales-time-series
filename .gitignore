@@ -1,0 +1,16 @@
+# Kaggle competition data — not redistributable, see data/README.md
+data/*
+!data/README.md
+
+# training artifacts & outputs
+lightning_logs/
+submission*.csv
+
+# notebook & python cruft
+.ipynb_checkpoints/
+__pycache__/
+.DS_Store
+
+# local working files
+portfolio_notion_draft.md
+.claude/
