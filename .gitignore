@@ -1,4 +1,4 @@
-# Kaggle competition data — not redistributable, see data/README.md
+# Kaggle competition data is not redistributable, see data/README.md
 data/*
 !data/README.md
 
@@ -10,7 +10,3 @@ submission*.csv
 .ipynb_checkpoints/
 __pycache__/
 .DS_Store
-
-# local working files
-portfolio_notion_draft.md
-.claude/
