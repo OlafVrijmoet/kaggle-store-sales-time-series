@@ -24,7 +24,7 @@ Season-sensitive choices were ranked on that second validation fold, the competi
 
 ![Seasonal fold ranking](assets/seasonal_fold.png)
 
-And this is what the ensemble's forecasts look like against reality on that fold, for three representative series:
+And this is what the winning configuration from that chart (its right-most point, the 80/20 LightGBM ensemble) looks like against reality on the same fold, for three representative series:
 
 ![Predicted vs actual](assets/pred_vs_actual.png)
 
