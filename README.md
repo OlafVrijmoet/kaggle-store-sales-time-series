@@ -53,7 +53,7 @@ Every candidate on that fold is retrained from scratch on data before Aug 16, 20
 
 **TFT v2: closing the memory gap without paying for it.** A year-long input window would cost roughly 7× the training time. Feeding the engineered lag features in as known-future inputs costs nothing, and it took the TFT to **0.408** on its own, the strongest single model of the project. The over-reach weakness showed up exactly where expected: eight school-supplies predictions of 22,000 to 78,000 units against recent levels in the hundreds. A per-series cap at twice the historical maximum (58 of 28,512 predictions) handled it. The final blend of GBDT ensemble and TFT v2, still erring differently even with shared features: **0.39962**.
 
-And this is what the winning configuration from the seasonal-judge chart (its right-most point, the 80/20 LightGBM ensemble) looks like against reality on the same fold, for three representative series:
+And this is what the best GBDT configuration from the seasonal-judge chart (its right-most point, the 80/20 LightGBM ensemble, later one half of the final blend) looks like against reality on the same fold, for three representative series:
 
 ![Predicted vs actual](assets/pred_vs_actual.png)
 
