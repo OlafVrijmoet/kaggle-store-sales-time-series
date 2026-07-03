@@ -18,7 +18,7 @@ Forecasting 16 days of daily unit sales for 54 stores × 33 product families (~1
 | 6 | TFT v2: engineered lags fed as known-future exogenous inputs, per-series prediction cap | n/a | 0.40810 |
 | 7 | 50/50 log-scale blend of #3 and #6 | n/a | **0.39962** |
 
-Submissions 1-4 are the experiment phase: every model was also fitted on pre-holdout data, so each idea got an honest local score. Submissions 5-7 are the finalist phase: the proven contenders, retrained on the full dataset and combined. Their outputs only exist for the real test window, and by then the holdout had twice been shown to misjudge late-August value, so the Aug-2016 fold and the leaderboard were the only honest judges left. Hyperparameter tuning was deliberately deferred throughout: early stopping set the tree counts, and feature work moved the score more than any parameter would.
+Submissions 1-4 are the experiment phase: every model was also fitted on pre-holdout data, so each idea got an honest local score. Submissions 5-7 are the finalist phase: the two proven contenders (the GBDT ensemble and the TFT) were retrained on the full dataset, and their prediction files were blended 50/50 on the log scale. Submission 5 blends the GBDT ensemble with TFT v1, submission 6 is the improved TFT v2 on its own, and submission 7 blends the GBDT ensemble with TFT v2. These outputs only exist for the real test window, and by then the holdout had twice been shown to misjudge late-August value, so the Aug-2016 fold and the leaderboard were the only honest judges left. Hyperparameter tuning was deliberately deferred throughout: early stopping set the tree counts, and feature work moved the score more than any parameter would.
 
 ## Three lessons, each confirmed on the leaderboard
 
