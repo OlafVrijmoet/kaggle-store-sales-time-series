@@ -18,6 +18,8 @@ Forecasting 16 days of daily unit sales for 54 stores × 33 product families (~1
 | 6 | TFT v2: engineered lags fed as known-future exogenous inputs, per-series prediction cap | n/a | 0.40810 |
 | 7 | 50/50 log-scale blend of #3 and #6 | n/a | **0.39962** |
 
+Submissions 1-4 are the experiment phase: every model was also fitted on pre-holdout data, so each idea got an honest local score. Submissions 5-7 are the finalist phase: the proven contenders, retrained on the full dataset and combined. Their outputs only exist for the real test window, and by then the holdout had twice been shown to misjudge late-August value, so the Aug-2016 fold and the leaderboard were the only honest judges left. Hyperparameter tuning was deliberately deferred throughout: early stopping set the tree counts, and feature work moved the score more than any parameter would.
+
 ## Three lessons, each confirmed on the leaderboard
 
 1. **Validation-window placement matters.** Submission 1 scored 0.08 worse on the leaderboard than locally. The cause was seasonal: the test window (Aug 16-31) contains the school-shopping ramp that the holdout (Jul 31 to Aug 15) only starts to show. The fix was an additional validation fold on Aug 16-31 of *2016*, the same season one year earlier, to judge season-sensitive features fairly. The same effect later made TFT v1 look bad locally (0.481) while it tied the GBDT ensemble on the real test window (0.428).
